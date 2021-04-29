@@ -58,6 +58,6 @@ function renderizacaoPrimeiraSecao() {
             <input class="qtd-niveis" placeholder="Quantidade de níveis do Quizz"></input>
         </form>
         
-        <button class="criar-quizz" onclick= "validacao()">Prosseguir para criar perguntas</button>
+        <button class="botaoPadraoCriacao" onclick= "validacao()">Prosseguir para criar perguntas</button>
         `;
 }

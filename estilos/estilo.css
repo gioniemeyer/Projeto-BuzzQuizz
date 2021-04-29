@@ -105,10 +105,33 @@ form {
     margin-top: 30px;
 }
 
+.container h2 {
+    margin-top: 70px;
+}
 
 input {
     width: 564px;
     border: 1px solid #d1d1d1;
     border-radius: 5px;
     outline-color: #D1D1D1;
+    height: 46px;
+    margin-bottom: 10px;
+}
+
+input:placeholder-shown {
+    font-style: italic;
+    font-size: 19px;
+    color: #bababa;
+}
+
+
+.botaoPadraoCriacao{
+    background: #EC362D;
+    color: #fff;
+    font-size: 20px;
+    border:none;
+    border-radius: 15px;
+    width: 370px;
+     height: 52px; 
+    text-decoration: none;
 }
