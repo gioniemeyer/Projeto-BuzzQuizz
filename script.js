@@ -11,7 +11,7 @@ function renderizarHome(resposta) {
     container.innerHTML = `
         <div class="meus-quizzes">
             <p>Você não criou nenhum quizz ainda :(</p>
-            <button>Criar Quizz</button>
+            <button onclick = "renderizacaoPrimeiraSecao()">Criar Quizz</button>
         </div>
         <div class="titulo">
             <strong>Todos os quizzes</strong>
@@ -19,9 +19,9 @@ function renderizarHome(resposta) {
 
         <div class="lista-quizzes"></div>`
 
-        const containerListaQuizzes = container.querySelector('.lista-quizzes');
-        for(let i = 0; i < listaQuizzes.length; i++) { 
-            containerListaQuizzes.innerHTML += `
+    const containerListaQuizzes = container.querySelector('.lista-quizzes');
+    for (let i = 0; i < listaQuizzes.length; i++) {
+        containerListaQuizzes.innerHTML += `
 
                     <div class="quizz" onclick="abrirQuizz(${listaQuizzes[i].id})">
                         <img src="${listaQuizzes[i].image}" alt="">
@@ -29,10 +29,35 @@ function renderizarHome(resposta) {
                     </div>
                 
                 `
-        }
+    }
 
 }
 
 buscarQuizzes()
 
 function abrirQuizz() {}
+
+
+function criarQuizz() {
+
+    renderizacaoPrimeiraSecao()
+    container.innerHTML = `
+    `;
+}
+
+
+function renderizacaoPrimeiraSecao() {
+    
+    container.innerHTML = `
+        <h2 class="titulo-secao"> <strong> Comece pelo começo </strong> </h2>
+        
+        <form>
+            <input class="titulo-quizz" placeholder="Título do seu quizz"></input>
+            <input class="imagem-quizz" placeholder="URL da imagem do seu quizz"></input>
+            <input class="qtd-perguntas" placeholder="Quantidade de perguntas do Quizz"></input>
+            <input class="qtd-niveis" placeholder="Quantidade de níveis do Quizz"></input>
+        </form>
+        
+        <button class="criar-quizz" onclick= "validacao()">Prosseguir para criar perguntas</button>
+        `;
+}
