@@ -1,4 +1,7 @@
+
 const container = document.querySelector('.container');
+
+buscarQuizzes()
 
 function buscarQuizzes() {
     const promessa = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/buzzquizz/quizzes');
@@ -7,21 +10,17 @@ function buscarQuizzes() {
 
 function renderizarHome(resposta) {
     const listaQuizzes = resposta.data;
-    const listaMeusQuizzes = [];
-    console.log(listaQuizzes);
 
     renderizarMeusQuizzes();
-    
+
     const containerListaQuizzes = container.querySelector('.lista-quizzes');
     for (let i = 0; i < listaQuizzes.length; i++) {
         containerListaQuizzes.innerHTML += `
-            <div class="quizz" onclick="abrirQuizz(${listaQuizzes[i].id})">
-                <img src="${listaQuizzes[i].image}" alt="">
-                <div class="overlay"</div>
-                <p> <strong>${listaQuizzes[i].title}</strong> </p>
-            </div>
-        
-        `
+                    <div class="quizz" onclick="abrirQuizz(${listaQuizzes[i].id})">
+                        <img src="${listaQuizzes[i].image}" alt="">
+                        <div class="overlay"</div>
+                        <p> <strong>${listaQuizzes[i].title}</strong> </p>
+                    </div>`;
     }
 }
 
@@ -34,19 +33,18 @@ function renderizarMeusQuizzes() {
     <div class="titulo">
         <strong>Todos os quizzes</strong>
     </div>
-
-    <div class="lista-quizzes"></div>`
+    <div class="lista-quizzes"></div>`;
 }
 
-buscarQuizzes()
 
 function abrirQuizz() {
     container.innerHTML = "";
     //colocar a tela 2
+}
 
 function criarQuizz() {
 
-    renderizacaoPrimeiraSecao()
+    renderizacaoPrimeiraSecao();
     container.innerHTML = `
     `;
 }
