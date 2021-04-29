@@ -25,6 +25,7 @@ function renderizarHome(resposta) {
 
                     <div class="quizz" onclick="abrirQuizz(${listaQuizzes[i].id})">
                         <img src="${listaQuizzes[i].image}" alt="">
+                        <div class="overlay"</div>
                         <p> <strong>${listaQuizzes[i].title}</strong> </p>
                     </div>
                 
@@ -35,4 +36,7 @@ function renderizarHome(resposta) {
 
 buscarQuizzes()
 
-function abrirQuizz() {}
+function abrirQuizz() {
+    container.innerHTML = "";
+    //colocar a tela 2
+}
