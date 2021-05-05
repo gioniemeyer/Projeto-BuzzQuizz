@@ -105,23 +105,93 @@ button {
     margin: 0 7px;
 }
 
-@media (max-width: 1100px) {
-    .container {
-        width: 100%;
-    }
+.banner {
+    height: 227px;
+    width: 100%;
+    position: relative;
+}
 
-    .titulo {
-        margin-left: 10vw;
-    }
+.banner img {
+    width: 100%;
+    height: 100%;
+    background: cover;
+  }
+  
+  .banner .titulo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 39px;
+    background-color: rgba(0, 0, 0, 0.50);
+    padding: 0 20px;
+  }
 
-    .meus-quizzes {
-        width: 90vw;
-    }
+  .perguntas {
+    display: flex;
+    width: 100%;
+    max-width: 684px;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+  
+  .perguntas .pergunta {
+    background-color: #FFF;
+    margin: 40px 0;
+  }
+  
+  .pergunta .titulo {
+    width: 100%;
+    height: 138px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+    font-size: 23px;
+    margin-bottom: 20px;
+    word-break: break-all;
+    padding: 0 20px;
+    font-weight: bold;
+  }
 
-    .lista-quizzes {
-        width: 90vw;
-        justify-content: center;
-    }
+  .perguntas .respostas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .perguntas .respostas .resposta {
+    display: flex;
+    flex-direction: column;
+    width: calc(50% - 20px);
+    cursor: pointer;
+  }
+  
+  .perguntas .respostas .resposta img {
+    width: 100%;
+    height: 175px;
+    background: cover;
+  }
+  
+  .perguntas .respostas .resposta .texto {
+    font-weight: bold;
+    margin: 10px 0 20px;
+    word-break: break-all;
+    width: 100%;
+  }
+  
+  /* .perguntas .respostas.respondido .resposta.incorreta .texto {
+    color: #FF4B4B;
+  }
+  
+  .perguntas .respostas.respondido .resposta.correta .texto {
+    color: #009C22;
+  } */
 
 form {
     display: flex;
@@ -161,4 +231,42 @@ input:placeholder-shown {
     width: 370px;
      height: 52px; 
     text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1100px) {
+    .container {
+        width: 100%;
+    }
+
+    .titulo {
+        margin-left: 10vw;
+    }
+
+    .meus-quizzes {
+        width: 90vw;
+    }
+
+    .lista-quizzes {
+        width: 90vw;
+        justify-content: center;
+    }
+
 }

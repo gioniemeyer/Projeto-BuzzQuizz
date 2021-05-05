@@ -53,9 +53,64 @@ function renderizarMeusQuizzes() {
 }
 
 
-function abrirQuizz() {
-    container.innerHTML = "";
-    //colocar a tela 2
+function abrirQuizz(id) {
+    const requisicao = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v2/buzzquizz/quizzes/${id}`);
+
+    requisicao.then(renderizarQuizz);
+}
+
+
+function renderizarQuizz(resposta) {
+
+    const quizzClicado = resposta.data;
+
+    console.log(quizzClicado);
+
+    // function aleatorizar () {
+    //     return Math.random() - 0.5;
+    //   }
+
+    // for (let i = 0; i < quizzClicado.questions.length; i++) {
+    //     const question = quizzClicado.questions[i];
+    //     question.answers.sort(aleatorizar);
+    //   }
+    
+      let perguntas = "";
+
+    quizzClicado.questions.forEach((pergunta, indice) => (perguntas += renderizarPergunta(pergunta, indice)));;
+
+    container.innerHTML = `
+    <div class="banner">
+      <img src="${quizzClicado.image}">
+      <div class="titulo">${quizzClicado.title}</div>
+    </div>
+    // <div class="perguntas">
+        ${perguntas}
+    </div>
+    <div class="nivel"></div>
+    `
+}
+
+function renderizarPergunta(pergunta, indice) {
+
+    let respostas = "";
+
+    pergunta.answers.forEach( (resposta) => { respostas += renderizarRespostas(resposta, indice) });
+    
+    return (`
+    <div class="pergunta pergunta-${indice}">
+        <div class="titulo" style="background-color:${pergunta.color}">
+        ${pergunta.title}
+        </div>
+        <div class="respostas">
+        ${respostas}
+        </div>
+    </div>
+    `)
+}
+
+function renderizarRespostas(resposta, indice) {
+    
 }
 
 function criarQuizz() {
